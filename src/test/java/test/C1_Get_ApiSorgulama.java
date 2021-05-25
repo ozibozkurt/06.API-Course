@@ -21,5 +21,6 @@ public class C1_Get_ApiSorgulama {
         System.out.println("Time : "+ response.getTime());
 
 
+
     }
 }
