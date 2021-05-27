@@ -58,6 +58,5 @@ public class C3_JsonObjesiOlusturma {
         System.out.println("");
         System.out.println(jsonObjectBody.toString());
 
-
     }
 }
