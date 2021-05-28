@@ -1,6 +1,7 @@
 package test;
 
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -75,5 +76,7 @@ public class C7_Get_BodyTekrarlardanKurtulma {
                         "totalprice", equalTo(643),
                         "depositpaid", equalTo(false),
                         "additionalneeds", equalTo(null));
+
+
     }
 }

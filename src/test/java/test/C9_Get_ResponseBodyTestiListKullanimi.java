@@ -10,7 +10,7 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class C9_Get_ResponseBodyTesti {
+public class C9_Get_ResponseBodyTestiListKullanimi {
     /*
     http://dummy.restapiexample.com/api/v1/employees url'ine bir GET request yolladigimizda
     donen Response'in
