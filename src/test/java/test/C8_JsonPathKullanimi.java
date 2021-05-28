@@ -50,17 +50,13 @@ public class C8_JsonPathKullanimi {
         adres.put( "city", "Ankara");
         adres.put( "postalCode","06100");
 
-
         kisiBilgisi.put("firstName", "Ahmet");
         kisiBilgisi.put("lastName", "Bulut");
         kisiBilgisi.put("age", 49);
         kisiBilgisi.put("address",adres);
         kisiBilgisi.put("phoneNumbers",arrTel);
 
-
         System.out.println(kisiBilgisi);
-
-
 
         System.out.println("isim : " + kisiBilgisi.get("firstName"));
         System.out.println("Soyisim : " + kisiBilgisi.get("lastName"));
