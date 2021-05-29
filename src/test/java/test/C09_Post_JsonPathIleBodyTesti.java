@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.*;
 public class C09_Post_JsonPathIleBodyTesti {
      /*
     https://restful-booker.herokuapp.com/booking/10 url’ine asagidaki body'ye sahip
-    bir PATCH request gonderdigimizde
+    bir POST request gonderdigimizde
                {
             "firstname" : "Ahmet",
             "lastname" : "Ahmet",

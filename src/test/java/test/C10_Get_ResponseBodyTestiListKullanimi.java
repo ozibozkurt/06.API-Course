@@ -47,7 +47,5 @@ public class C10_Get_ResponseBodyTestiListKullanimi {
                 body("data.employee_name",hasItem("Ashton Cox")).
                 body("data.employee_age",hasItems(61));
 
-
-
     }
 }
