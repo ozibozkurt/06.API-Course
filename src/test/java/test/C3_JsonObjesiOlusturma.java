@@ -3,6 +3,9 @@ package test;
 import org.json.JSONObject;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class C3_JsonObjesiOlusturma {
     @Test
     public void JsonObje(){
@@ -59,4 +62,6 @@ public class C3_JsonObjesiOlusturma {
         System.out.println(jsonObjectBody.toString());
 
     }
+
+
 }

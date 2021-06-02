@@ -58,6 +58,12 @@ public class C09_Post_JsonPathIleBodyTesti {
 
         requestBody.put("additionalneeds","wi-fi");
 
+        System.out.println(requestBody);
+        System.out.println(requestBody.get("bookingdates"));
+        System.out.println(requestBody.get("firstname"));
+        System.out.println(requestBody.get("depositpaid"));
+        System.out.println(requestBody.getJSONObject("bookingdates").get("checkin"));
+
         // 2- expected data hazirla (response'un tamami sorulmadigi icin expected data hazirlamamiza gerek yok)
         // 3- Server'dan gelen response bilgilerini al
 

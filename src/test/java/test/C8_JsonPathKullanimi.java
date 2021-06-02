@@ -1,6 +1,7 @@
 package test;
 
 import io.restassured.path.json.JsonPath;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
 
@@ -33,7 +34,7 @@ public class C8_JsonPathKullanimi {
 
         JSONObject kisiBilgisi = new JSONObject();
         JSONObject adres=new JSONObject();
-        JSONObject arrTel[] = new JSONObject[2];
+        JSONArray arrTel = new JSONArray();
         JSONObject telCep=new JSONObject();
         JSONObject telEv=new JSONObject();
 
@@ -43,8 +44,9 @@ public class C8_JsonPathKullanimi {
         telCep.put("type", "cep");
         telCep.put("number", "532-555 55 55");
 
-        arrTel[0]=telCep;
-        arrTel[1]=telEv;
+        arrTel.put(telCep);
+        arrTel.put(telEv);
+
 
         adres.put( "streetAddress", "Kurtulus cad.");
         adres.put( "city", "Ankara");
@@ -62,5 +64,8 @@ public class C8_JsonPathKullanimi {
         System.out.println("Soyisim : " + kisiBilgisi.get("lastName"));
         System.out.println("yas : " + kisiBilgisi.get("age"));
         System.out.println("adres : " + kisiBilgisi.get("address").toString());
+        System.out.println("sehir : " + kisiBilgisi.getJSONObject("address").get("city"));
+        System.out.println("Tel numaralari : " + kisiBilgisi.getJSONArray("phoneNumbers"));
+        System.out.println("cep telefonu : " + kisiBilgisi.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
      }
 }
