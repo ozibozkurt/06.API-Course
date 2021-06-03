@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C11_BaseUrlKullanimi extends HerokuAppBaseUrl {
+public class C22_BaseUrlKullanimi extends HerokuAppBaseUrl {
 
     @Test
     public void get01(){

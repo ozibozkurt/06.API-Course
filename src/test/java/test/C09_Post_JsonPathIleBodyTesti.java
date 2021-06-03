@@ -15,7 +15,7 @@ public class C09_Post_JsonPathIleBodyTesti {
     bir POST request gonderdigimizde
                {
             "firstname" : "Ahmet",
-            "lastname" : "Ahmet",
+            "lastname" : "Bulut",
             "totalprice" : 500,
             "depositpaid" : false,
             "bookingdates" : {

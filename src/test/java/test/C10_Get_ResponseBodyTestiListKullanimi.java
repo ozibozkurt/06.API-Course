@@ -19,7 +19,7 @@ public class C10_Get_ResponseBodyTestiListKullanimi {
     ve response body'sindeki
         employees sayisinin 24
 	    ve employee'lerden birinin "Ashton Cox"
-	    ve girilen yaslar icinde 61 degerinin oldugunu test edin
+	    ve girilen yaslar icinde 61,20 ve 35 degerlerinin oldugunu test edin
     test edin.
      */
 
@@ -45,7 +45,7 @@ public class C10_Get_ResponseBodyTestiListKullanimi {
                 contentType(ContentType.JSON).
                 body("data.id", hasSize(24)).
                 body("data.employee_name",hasItem("Ashton Cox")).
-                body("data.employee_age",hasItems(61));
+                body("data.employee_age",hasItems(61,21,35));
 
     }
 }
