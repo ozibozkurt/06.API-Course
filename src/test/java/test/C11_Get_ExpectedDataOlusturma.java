@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class C11_Get_ExpectedDataOlusturma {
     /*
-        https://jsonplaceholder.typicode.com/post/22 url'ine
+        https://jsonplaceholder.typicode.com/posts/22 url'ine
         bir GET request yolladigimizda
         donen response body’sinin asagida verilen ile ayni oldugunutest ediniz
 
