@@ -1,68 +1,69 @@
 package test;
 
-import baseUrlKlasoru.DummyRestapiBaseUrl;
+
+import baseUrlKlasoru.JsonPlaceBaseUrl;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C15_BaseUrlDummyRestapi extends DummyRestapiBaseUrl {
+public class C15_BaseUrlJsonPlace extends JsonPlaceBaseUrl {
 
     @Test
     public void test01(){
-        // 1-  http://dummy.restapiexample.com/api/v1/employees endpointine
+        // 1-  https://jsonplaceholder.typicode.com/posts endpointine
         // bir GET request gonderdigimizde donen response’un
-        // status code’unun 200 oldugunu ve Response’ta 24 calisanin oldugunu test edin
+        // status code’unun 200 oldugunu ve Response’ta 100 kayit oldugunu test edin
 
         // 1- Request url ve body olustur
-        specDummy.pathParam("Pp1","employees");
+        specJsonPlace.pathParam("Pp1","posts");
 
         // 2- Soruda varsa expected data olustur
         // 3- Response olustur, request gonderip donen sonucu kaydet
-        Response response=given().spec(specDummy).when().get("/{Pp1}");
+        Response response=given().spec(specJsonPlace).when().get("/{Pp1}");
         response.prettyPrint();
         // 4- Assertion
         response.
                 then().
                 assertThat().
                 statusCode(200).
-                body("data.id", Matchers.hasSize(24));
+                body("id", Matchers.hasSize(100));
 
     }
 
     @Test
     public void test02(){
-        //2- http://dummy.restapiexample.com/api/v1/employee/1 endpointine
+        //2- https://jsonplaceholder.typicode.com/posts/44 endpointine
         // bir GET request gonderdigimizde donen response’un
-        // status code’unun 200 oldugunu ve “employee_name” degerinin “Tiger Nixon” oldugunu test edin
+        // status code’unun 200 oldugunu ve “title” degerinin “optio dolor molestias sit” oldugunu test edin
 
         // 1- Requst url ve body olustur
-        specDummy.pathParams("Pp1","employee","Pp2",1);
+        specJsonPlace.pathParams("Pp1","posts","Pp2",44);
 
         // 2- Soruda varsa expected data olustur
         // 3- Response olustur, request gonder ve donen response'u kaydet
-        Response response=given().spec(specDummy).when().get("/{Pp1}/{Pp2}");
+        Response response=given().spec(specJsonPlace).when().get("/{Pp1}/{Pp2}");
         response.prettyPrint();
         // Assertions
         response.
                 then().
                 assertThat().
                 statusCode(200).
-                body("data.employee_name",Matchers.equalTo("Tiger Nixon"));
+                body("title",Matchers.equalTo("optio dolor molestias sit"));
     }
 
     @Test
     public void test03(){
-        // 3- http://dummy.restapiexample.com/api/v1/delete/2 endpointine
+        // 3- https://jsonplaceholder.typicode.com/posts/50 endpointine
         // bir DELETE request gonderdigimizde donen response’un
-        // status code’unun 200 oldugunu ve "message” degerinin "Successfully! Record has been deleted” oldugunu test edin
+        // status code’unun 200 oldugunu ve response body'sinin null oldugunu test edin
 
         // 1- Requst url ve body olustur
-        specDummy.pathParams("Pp1","delete","Pp2",2);
+        specJsonPlace.pathParams("Pp1","posts","Pp2",50);
         // 2- Soruda varsa expected data olustur
         // 3- Response olustur, request gonder ve donen response'u kaydet
-        Response response=given().spec(specDummy).when().delete("/{Pp1}/{Pp2}");
+        Response response=given().spec(specJsonPlace).when().delete("/{Pp1}/{Pp2}");
         response.prettyPrint();
 
         // Assertions
@@ -70,7 +71,7 @@ public class C15_BaseUrlDummyRestapi extends DummyRestapiBaseUrl {
                 then().
                 assertThat().
                 statusCode(200).
-                body("message",Matchers.equalTo("Successfully! Record has been deleted"));
+                body("message",(Matchers.nullValue()));
     }
 
 }
