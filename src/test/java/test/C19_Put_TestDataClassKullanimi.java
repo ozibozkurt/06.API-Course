@@ -79,5 +79,6 @@ public class C19_Put_TestDataClassKullanimi extends JsonPlaceBaseUrl {
         //            "id":70
         assertEquals(expectedDataBody.get("id"),respJsonPath.getInt("id"));
 
+
     }
 }
