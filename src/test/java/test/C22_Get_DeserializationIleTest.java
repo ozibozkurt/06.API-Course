@@ -56,7 +56,7 @@ public class C22_Get_DeserializationIleTest extends DummyRestApiBaseUrl {
 
 
         Map<String , Object> responseMap = response.as(HashMap.class);
-        JsonPath responseJPath=response.jsonPath();
+
 
         System.out.println(expectedData);
         // {
@@ -84,13 +84,13 @@ public class C22_Get_DeserializationIleTest extends DummyRestApiBaseUrl {
         //  status=success
         //  }
 
-        assertEquals(((Map)expectedData.get("data")).get("id"),responseJPath.getInt("data.id"));
-        assertEquals(((Map)expectedData.get("data")).get("employee_name"),responseJPath.getString("data.employee_name"));
-        assertEquals(((Map)expectedData.get("data")).get("employee_salary"),responseJPath.getInt("data.employee_salary"));
-        assertEquals(((Map)expectedData.get("data")).get("employee_age"),responseJPath.getInt("data.employee_age"));
-        assertEquals(((Map)expectedData.get("data")).get("profile_image"),responseJPath.get("data.profile_image"));
-        assertEquals(expectedData.get("message"),responseJPath.getString("message"));
-        assertEquals(expectedData.get("status"),responseJPath.getString("status"));
+        assertEquals(((Map)expectedData.get("data")).get("id"),((Map)responseMap.get("data")).get("id"));
+        assertEquals(((Map)expectedData.get("data")).get("employee_name"),((Map)responseMap.get("data")).get("employee_name"));
+        assertEquals(((Map)expectedData.get("data")).get("employee_salary"),((Map)responseMap.get("data")).get("employee_salary"));
+        assertEquals(((Map)expectedData.get("data")).get("employee_age"),((Map)responseMap.get("data")).get("employee_age"));
+        assertEquals(((Map)expectedData.get("data")).get("profile_image"),((Map)responseMap.get("data")).get("profile_image"));
+        assertEquals(expectedData.get("message"),responseMap.get("message"));
+        assertEquals(expectedData.get("status"),responseMap.get("status"));
 
     }
 }

@@ -75,6 +75,11 @@ public class C23_Post_DeserializationIleTest extends HerokuAppBaseUrl {
         System.out.println("responseMap : " + responseMap);
         System.out.println("expectedMap : " + expectedDataMap);
         assertEquals(((Map)expectedDataMap.get("booking")).get("firstname"), ((Map)responseMap.get("booking")).get("firstname"));
+        assertEquals(((Map)expectedDataMap.get("booking")).get("lastname"), ((Map)responseMap.get("booking")).get("lastname"));
+        assertEquals((((Map)expectedDataMap.get("booking")).get("totalprice")),(((Map)responseMap.get("booking")).get("totalprice")));
+        assertEquals((((Map)expectedDataMap.get("booking")).get("depositpaid")), ((Map)responseMap.get("booking")).get("depositpaid"));
+        assertEquals(((Map) ((Map<?, ?>) expectedDataMap.get("booking")).get("bookingdates")).get("checkin"),((Map) ((Map<?, ?>) responseMap.get("booking")).get("bookingdates")).get("checkin"));
+        assertEquals(((Map) ((Map<?, ?>) expectedDataMap.get("booking")).get("bookingdates")).get("checkout"),((Map) ((Map<?, ?>) responseMap.get("booking")).get("bookingdates")).get("checkout"));
 
 
 

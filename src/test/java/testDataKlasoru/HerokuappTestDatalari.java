@@ -72,7 +72,7 @@ import java.util.Map;
 
             bookingBody.put("firstname", "Ahmet");
             bookingBody.put("lastname", "Bulut");
-            bookingBody.put("totalprice", 500);
+            bookingBody.put("totalprice", 500.0);
             bookingBody.put("depositpaid", false);
             bookingBody.put("bookingdates", bookingdatesBody);
             bookingBody.put("additionalneeds", "wi-fi");
