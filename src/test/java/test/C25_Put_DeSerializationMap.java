@@ -5,6 +5,7 @@ import baseUrlKlasoru.JsonPlaceBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.Assert;
 import testDataKlasoru.JsonplaceholderTestDatalari;
 
 
@@ -12,8 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
-public class C25_DeSerializationMap extends JsonPlaceBaseUrl {
+public class C25_Put_DeSerializationMap extends JsonPlaceBaseUrl {
 
     @Test
     public void test01(){
@@ -70,6 +72,11 @@ public class C25_DeSerializationMap extends JsonPlaceBaseUrl {
 
         Map<String,Object> responseMap = response.as(HashMap.class);
         System.out.println(responseMap);
+
+        assertEquals(responseMap.get("title"),expectedtBodyMap.get("title"));
+        assertEquals(responseMap.get("body"),expectedtBodyMap.get("body"));
+        assertEquals(responseMap.get("userId"),expectedtBodyMap.get("userId"));
+        assertEquals(responseMap.get("id"),expectedtBodyMap.get("id"));
 
     }
 }
