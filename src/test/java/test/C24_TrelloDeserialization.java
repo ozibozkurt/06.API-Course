@@ -1,6 +1,7 @@
 package test;
 
 import baseUrlKlasoru.TrelloBaseUrl;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -76,6 +77,10 @@ public class C24_TrelloDeserialization extends TrelloBaseUrl {
                 "    },\n" +
                 "    \"limits\": {}\n" +
                 "}" ;
+
+
+        Gson gson=new Gson();
+
 
 
         Map<String,Object> responseMap = JsonUtil.convertJsonToJava(responseJson, HashMap.class);

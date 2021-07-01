@@ -2,6 +2,9 @@ package testDataKlasoru;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class JsonplaceholderTestDatalari {
 
    public int basariliStatusCode = 200;
@@ -40,6 +43,17 @@ public class JsonplaceholderTestDatalari {
     }
 
 
+    public Map tumBodyMapOlustur(String title,String body,int userId,int id){
+
+        Map<String,Object> tumBodyMap=new HashMap();
+        tumBodyMap.put("title",title);
+        tumBodyMap.put("body",body);
+        tumBodyMap.put("userId",userId);
+        tumBodyMap.put("id",id);
+
+
+        return tumBodyMap;
+    }
 
 
 }
