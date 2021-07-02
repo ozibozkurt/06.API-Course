@@ -39,4 +39,25 @@ public class DummyRestApiTestDatalari {
         expectedDataMap.put("message","Successfully! Record has been fetched.");
         return expectedDataMap;
     }
+
+
+    public HashMap<String,Object> tumBodyMapOlustur(String status, int id,String employee_name,
+                                                    int employee_salary, int employee_age,
+                                                    String profile_image,String message){
+
+        HashMap<String,Object> tumBodyMap =new HashMap<>();
+        HashMap<String,Object> innerBodyMap =new HashMap<>();
+
+        innerBodyMap.put("id",id);
+        innerBodyMap.put("employee_name",employee_name);
+        innerBodyMap.put("employee_salary",employee_salary);
+        innerBodyMap.put("employee_age",employee_age);
+        innerBodyMap.put("profile_image",profile_image);
+
+        tumBodyMap.put("status",status);
+        tumBodyMap.put("data",innerBodyMap);
+        tumBodyMap.put("message",message);
+
+        return tumBodyMap;
+    }
 }
