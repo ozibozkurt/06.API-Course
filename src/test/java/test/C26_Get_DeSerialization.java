@@ -1,9 +1,7 @@
 package test;
 
 import baseUrlKlasoru.DummyRestApiBaseUrl;
-
 import io.restassured.response.Response;
-import org.junit.Assert;
 import org.junit.Test;
 import testDataKlasoru.DummyRestApiTestDatalari;
 
@@ -13,7 +11,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class C26__Get_De_Serialization extends DummyRestApiBaseUrl {
+public class C26_Get_DeSerialization extends DummyRestApiBaseUrl {
         /*
     http://dummy.restapiexample.com/api/v1/employee/3 url’ine bir GET request gonderdigimizde
     donen response’un asagidaki gibi oldugunu test edin.

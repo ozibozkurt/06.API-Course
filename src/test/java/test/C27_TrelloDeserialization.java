@@ -4,17 +4,15 @@ import baseUrlKlasoru.TrelloBaseUrl;
 import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.json.JSONObject;
 import org.junit.Test;
 import utils.JsonUtil;
-
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class C24_TrelloDeserialization extends TrelloBaseUrl {
+public class C27_TrelloDeserialization extends TrelloBaseUrl {
     // https://api.trello.com/1/boards/?key={{TrelloKey}}&token={{TrelloToken}}&name=Api Board
 
     @Test
@@ -27,7 +25,7 @@ public class C24_TrelloDeserialization extends TrelloBaseUrl {
         Response response=given().spec(specTrello).contentType(ContentType.JSON).when().post("/{pp1}/{pp2}/");
         response.prettyPrint();
 
-        String responseJson= "{\n" +
+        String expectedDataJson= "{\n" +
                 "    \"id\": \"60cef76ce3e9721060e0cd2c\",\n" +
                 "    \"name\": \"Api Board\",\n" +
                 "    \"desc\": \"\",\n" +
@@ -83,8 +81,8 @@ public class C24_TrelloDeserialization extends TrelloBaseUrl {
 
 
 
-        Map<String,Object> responseMap = JsonUtil.convertJsonToJava(responseJson, HashMap.class);
-        System.out.println(responseMap);
+       Map<String,Object> responseMap = JsonUtil.convertJsonToJava(expectedDataJson, HashMap.class);
+       System.out.println(responseMap);
 
     }
 

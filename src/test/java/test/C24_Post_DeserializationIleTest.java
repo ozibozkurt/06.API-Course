@@ -13,7 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class C23_Post_DeserializationIleTest extends HerokuAppBaseUrl {
+public class C24_Post_DeserializationIleTest extends HerokuAppBaseUrl {
 /*
     https://restful-booker.herokuapp.com/booking url’ine
     asagidaki body'ye sahip bir POST request gonderdigimizde
@@ -78,8 +78,8 @@ public class C23_Post_DeserializationIleTest extends HerokuAppBaseUrl {
         assertEquals(((Map)expectedDataMap.get("booking")).get("lastname"), ((Map)responseMap.get("booking")).get("lastname"));
         assertEquals((((Map)expectedDataMap.get("booking")).get("totalprice")),(((Map)responseMap.get("booking")).get("totalprice")));
         assertEquals((((Map)expectedDataMap.get("booking")).get("depositpaid")), ((Map)responseMap.get("booking")).get("depositpaid"));
-        assertEquals(((Map) ((Map<?, ?>) expectedDataMap.get("booking")).get("bookingdates")).get("checkin"),((Map) ((Map<?, ?>) responseMap.get("booking")).get("bookingdates")).get("checkin"));
-        assertEquals(((Map) ((Map<?, ?>) expectedDataMap.get("booking")).get("bookingdates")).get("checkout"),((Map) ((Map<?, ?>) responseMap.get("booking")).get("bookingdates")).get("checkout"));
+        assertEquals(((Map) ((Map) expectedDataMap.get("booking")).get("bookingdates")).get("checkin"),((Map) ((Map) responseMap.get("booking")).get("bookingdates")).get("checkin"));
+        assertEquals(((Map) ((Map) expectedDataMap.get("booking")).get("bookingdates")).get("checkout"),((Map) ((Map) responseMap.get("booking")).get("bookingdates")).get("checkout"));
 
 
 

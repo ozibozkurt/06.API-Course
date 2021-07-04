@@ -1,6 +1,5 @@
 package test;
 
-
 import baseUrlKlasoru.JsonPlaceBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -13,11 +12,8 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class C25_Put_DeSerializationMap extends JsonPlaceBaseUrl {
-
-    @Test
-    public void test01(){
-        /*
+public class C22_Put_DeSerialization extends JsonPlaceBaseUrl {
+    /*
         https://jsonplaceholder.typicode.com/posts/70 url'ine
         asagidaki body’e sahip bir PUT request yolladigimizda donen response’in
         status kodunun 200,
@@ -43,26 +39,27 @@ public class C25_Put_DeSerializationMap extends JsonPlaceBaseUrl {
             "id":70
             }
      */
-
+    @Test
+    public void Test01(){
         // 1- Request url ve body olustur
         specJsonPlace.pathParams("pp1","posts","pp2",70);
         JsonplaceholderTestDatalari jsonplaceholderTestDatalari=new JsonplaceholderTestDatalari();
 
-        Map<String,Object> requestBodyMap= jsonplaceholderTestDatalari.tumBodyMapOlustur("Ahmet","Merhaba",10,70);
+        Map<String,Object> requestBodyMap= jsonplaceholderTestDatalari.requestBodyMapOlustur();
 
         // 2- soruda varsa expected data olustur
 
-        Map<String,Object> expectedtBodyMap= jsonplaceholderTestDatalari.tumBodyMapOlustur("Ahmet","Merhaba",10,70);
+        Map<String,Object> expectedtBodyMap= jsonplaceholderTestDatalari.expectedBodyMapOlustur();
 
 
         // 3- Response olustur, request gonderip donen response'i kaydet
 
         Response response=given().
-                            contentType(ContentType.JSON).
-                            spec(specJsonPlace).
-                            when().
-                            body(requestBodyMap).
-                            put("/{pp1}/{pp2}");
+                contentType(ContentType.JSON).
+                spec(specJsonPlace).
+                when().
+                body(requestBodyMap).
+                put("/{pp1}/{pp2}");
 
         response.prettyPrint();
 

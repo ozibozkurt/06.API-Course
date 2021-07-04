@@ -55,5 +55,28 @@ public class JsonplaceholderTestDatalari {
         return tumBodyMap;
     }
 
+    public Map requestBodyMapOlustur(){
+
+        Map<String,Object> ReqBodyMap=new HashMap();
+        ReqBodyMap.put("title","Ahmet");
+        ReqBodyMap.put("body","Merhaba");
+        ReqBodyMap.put("userId",10);
+        ReqBodyMap.put("id",70);
+
+
+        return ReqBodyMap;
+    }
+
+    public Map expectedBodyMapOlustur(){
+
+        Map<String,Object> ExpectedBodyMap=new HashMap();
+        ExpectedBodyMap.put("title","Ahmet");
+        ExpectedBodyMap.put("body","Merhaba");
+        ExpectedBodyMap.put("userId",10);
+        ExpectedBodyMap.put("id",70);
+
+
+        return ExpectedBodyMap;
+    }
 
 }

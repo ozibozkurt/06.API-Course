@@ -1,11 +1,7 @@
 package test;
 
 import baseUrlKlasoru.DummyRestApiBaseUrl;
-import baseUrlKlasoru.JsonPlaceBaseUrl;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.json.JSONObject;
-import org.junit.Assert;
 import org.junit.Test;
 import testDataKlasoru.DummyRestApiTestDatalari;
 
@@ -15,7 +11,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class C22_Get_DeserializationIleTest extends DummyRestApiBaseUrl {
+public class C23_Get_DeserializationIleTest extends DummyRestApiBaseUrl {
      /*
     http://dummy.restapiexample.com/api/v1/employee/3 url’ine bir GET request gonderdigimizde
     donen response’un status code’unun 200, content Type’inin application/json
