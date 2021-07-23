@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
-public class C28_Deserialization_Notlar extends DummyRestApiBaseUrl {
+public class C34_Deserialization_Notlar extends DummyRestApiBaseUrl {
     @Test
     public void test01(){
 

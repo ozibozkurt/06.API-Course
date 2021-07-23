@@ -5,14 +5,10 @@ import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-import utils.JsonUtil;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class C27_TrelloDeserialization extends TrelloBaseUrl {
+public class C33_TrelloDeserialization extends TrelloBaseUrl {
     // https://api.trello.com/1/boards/?key={{TrelloKey}}&token={{TrelloToken}}&name=Api Board
 
     @Test
@@ -80,10 +76,10 @@ public class C27_TrelloDeserialization extends TrelloBaseUrl {
         Gson gson=new Gson();
 
 
-
+/*
        Map<String,Object> responseMap = JsonUtil.convertJsonToJava(expectedDataJson, HashMap.class);
        System.out.println(responseMap);
-
+*/
     }
 
 

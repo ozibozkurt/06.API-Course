@@ -43,7 +43,7 @@ public class JsonplaceholderTestDatalari {
     }
 
 
-    public Map tumBodyMapOlustur(String title,String body,int userId,int id){
+    public Map tumBodyMapOlustur(String title,String body,double userId,double id){
 
         Map<String,Object> tumBodyMap=new HashMap();
         tumBodyMap.put("title",title);
