@@ -73,6 +73,7 @@ public class C28_Post_Pojo extends HerokuAppBaseUrl {
         // expectedDataPojo ==> response
 
         PojoBookingResponseBody responsePojo=response.as(PojoBookingResponseBody.class);
+
         // expectedDataPojo ==> responsePojo
         assertEquals(expectedDataPojo.getBooking().getFirstname(),responsePojo.getBooking().getFirstname());
         assertEquals(expectedDataPojo.getBooking().getLastname(),responsePojo.getBooking().getLastname());
