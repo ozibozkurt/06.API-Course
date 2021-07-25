@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Generated("jsonschema2pojo")
-public class Data {
+public class PojoDummyData {
 
     private Integer id;
     private String employeeName;
@@ -18,7 +18,7 @@ public class Data {
      * No args constructor for use in serialization
      *
      */
-    public Data() {
+    public PojoDummyData() {
     }
 
     /**
@@ -29,7 +29,7 @@ public class Data {
      * @param profileImage
      * @param employeeSalary
      */
-    public Data(Integer id, String employeeName, Integer employeeSalary, Integer employeeAge, String profileImage) {
+    public PojoDummyData(Integer id, String employeeName, Integer employeeSalary, Integer employeeAge, String profileImage) {
         super();
         this.id = id;
         this.employeeName = employeeName;
@@ -89,7 +89,7 @@ public class Data {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Data.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(PojoDummyData.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("id");
         sb.append('=');
         sb.append(((this.id == null)?"<null>":this.id));

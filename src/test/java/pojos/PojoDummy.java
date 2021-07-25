@@ -8,7 +8,7 @@ import java.util.Map;
 public class PojoDummy {
 
     private String status;
-    private Data data;
+    private PojoDummyData pojoDummyData;
     private String message;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -21,14 +21,14 @@ public class PojoDummy {
 
     /**
      *
-     * @param data
+     * @param pojoDummyData
      * @param message
      * @param status
      */
-    public PojoDummy(String status, Data data, String message) {
+    public PojoDummy(String status, PojoDummyData pojoDummyData, String message) {
         super();
         this.status = status;
-        this.data = data;
+        this.pojoDummyData = pojoDummyData;
         this.message = message;
     }
 
@@ -40,12 +40,12 @@ public class PojoDummy {
         this.status = status;
     }
 
-    public Data getData() {
-        return data;
+    public PojoDummyData getData() {
+        return pojoDummyData;
     }
 
-    public void setData(Data data) {
-        this.data = data;
+    public void setData(PojoDummyData pojoDummyData) {
+        this.pojoDummyData = pojoDummyData;
     }
 
     public String getMessage() {
@@ -74,7 +74,7 @@ public class PojoDummy {
         sb.append(',');
         sb.append("data");
         sb.append('=');
-        sb.append(((this.data == null)?"<null>":this.data));
+        sb.append(((this.pojoDummyData == null)?"<null>":this.pojoDummyData));
         sb.append(',');
         sb.append("message");
         sb.append('=');

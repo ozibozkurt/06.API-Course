@@ -4,7 +4,7 @@ import baseUrlKlasoru.DummyRestApiBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.Data;
+import pojos.PojoDummyData;
 import pojos.PojoDummy;
 
 import static io.restassured.RestAssured.given;
@@ -38,8 +38,8 @@ public class C29_Get_Pojo extends DummyRestApiBaseUrl {
 
         // 2- soruda varsa expected Data olustur
 
-        Data dummyDataPojo = new Data(3,"Ashton Cox",86000,66,"");
-        PojoDummy expectedDataPojo=new PojoDummy("success",dummyDataPojo,"Successfully! Record has been fetched.");
+        PojoDummyData dummyPojoDummyDataPojo = new PojoDummyData(3,"Ashton Cox",86000,66,"");
+        PojoDummy expectedDataPojo=new PojoDummy("success", dummyPojoDummyDataPojo,"Successfully! Record has been fetched.");
 
         // 3- Response olustur, request gonderip donen response'i kaydet
 
@@ -52,12 +52,12 @@ public class C29_Get_Pojo extends DummyRestApiBaseUrl {
 
         // expectedDataPojo ==> responsePojo
         System.out.println(responsePojo);
-        assertEquals(expectedDataPojo.getStatus(),responsePojo.getStatus());
+        assertEquals(expectedDataPojo.getStatus(),responseJsonPath.get("status"));
         assertEquals(expectedDataPojo.getData().getId(),responseJsonPath.get("data.id"));
         assertEquals(expectedDataPojo.getData().getEmployeeName(),responseJsonPath.get("data.employee_name"));
         assertEquals(expectedDataPojo.getData().getEmployeeSalary(),responseJsonPath.get("data.employee_salary"));
         assertEquals(expectedDataPojo.getData().getEmployeeAge(),responseJsonPath.get("data.employee_age"));
         assertEquals(expectedDataPojo.getData().getProfileImage(),responseJsonPath.get("data.profile_image"));
-        assertEquals(expectedDataPojo.getMessage(),responsePojo.getMessage());
+        assertEquals(expectedDataPojo.getMessage(),responseJsonPath.get("message"));
     }
 }
